@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block head %}Logistic Regression{% endblock %} 
+{% block desc %}Affairs dataset from Statsmodels to classify women having atleast one affair{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <form class="user" method="post">
+            <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="number" class="form-control form-control-user" id="rate_marriage"
+                        name="rate_marriage" placeholder="Rate of Marriage" required>
+                </div>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control form-control-user" id="age"
+                        name="age" placeholder="age" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="number" class="form-control form-control-user" id="child"
+                    name="child" placeholder="No. of Children" required>
+                </div>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control form-control-user"
+                        name="years" id="years" placeholder="Years Married" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="number" class="form-control form-control-user" id="religious"
+                        name="religious" placeholder="Religious" required>
+                </div>
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="number" class="form-control form-control-user"
+                        name="edu" id="edu" placeholder="Level of education" required>
+                </div>
+                
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="number" class="form-control form-control-user"
+                        name="occ" id="occ" placeholder="Occupation" required>
+                </div>
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user"
+                        name="husOcc" id="husOcc" placeholder="Husband's Occupation" required>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-primary btn-user"
+                        id="classify" value="Classify">
+            </div>
+        </form>                      
+        <div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class=flashes>
+                        {% for message in messages %}
+                            <li style="color: red;">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+{% endblock %}

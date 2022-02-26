@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}Time Series{% endblock %} 
+{% block desc %}
+Make ARIMA model over shampoo sales data and check the MSE between predicted and actual value.
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <h1>Coming Soon.........</h1>                     
+        <div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class=flashes>
+                        {% for message in messages %}
+                            <li style="color: red;">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+{% endblock %}

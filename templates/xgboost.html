@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block head %}XGBoost Algorithm{% endblock %} 
+{% block desc %}
+To predict whether a person makes over 50K per year or 
+not from classic adult dataset using XGBoost.
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <form class="user" method="post">
+            <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="CRIM"
+                        name="CRIM" placeholder="CRIM" required>
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="ZN"
+                        name="ZN" placeholder="ZN" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="INDUS"
+                    name="INDUS" placeholder="INDUS" required>
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="CHAS"
+                        name="CHAS" placeholder="CHAS" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user"
+                        name="NOX" id="NOX" placeholder="NOX" required>
+                </div>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control form-control-user"
+                        name="RM" id="RM" placeholder="RM" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user"
+                        name="AGE" id="AGE" placeholder="AGE" required>
+                </div>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control form-control-user"
+                        name="DIS" id="DIS" placeholder="DIS" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user"
+                        name="RAD" id="RAD" placeholder="RAD" required>
+                </div>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control form-control-user"
+                        name="TAX" id="TAX" placeholder="TAX" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user"
+                        name="PTRATIO" id="PTRATIO" placeholder="PTRATIO" required>
+                </div>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control form-control-user"
+                        name="B" id="B" placeholder="B" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user"
+                        name="LSTAT" id="LSTAT" placeholder="LSTAT" required>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-primary btn-user" align="right"
+                        id="predict" value="Predict">
+            </div>
+        </form>                      
+        <div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class=flashes>
+                        {% for message in messages %}
+                            <li style="color: red;">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+{% endblock %}
